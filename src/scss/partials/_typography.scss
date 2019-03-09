@@ -1,0 +1,27 @@
+// ---------------------------------------
+//  General helper classes
+// ---------------------------------------
+body {
+//   @include opensans;
+}
+
+a {
+  transition: all .2s ease;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.text-primary {
+  color: $primary-color;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+a.text-white,
+.text-white {
+  color: $white;
+}
