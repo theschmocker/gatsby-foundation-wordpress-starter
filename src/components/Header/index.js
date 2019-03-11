@@ -9,6 +9,7 @@ import './index.scss';
 // TODO: drilldown menus
 
 function Navigation({ isOpen, close, siteTitle }) {
+    // Get all Wordpress pages except for the front page to build navigation
     const { allWordpressPage } = useStaticQuery(graphql`
     {
         allWordpressPage(filter: { path: { ne: "/" } }) {
@@ -48,6 +49,7 @@ function Navigation({ isOpen, close, siteTitle }) {
 }
 
 function Header({ siteTitle }) {
+    // Handle menu state. Could be useful as a custom hook
     const [menuIsOpen, setMenuIsOpen] = useState(false);
     const openMenu = () => setMenuIsOpen(true);
     const closeMenu = () => setMenuIsOpen(false);

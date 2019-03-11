@@ -21,25 +21,28 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 library.add(faBars)
 
 const Base = ({ children }) => { 
-  const { site: { siteMetadata } } = useStaticQuery(graphql`
+  const { wordpressSiteMetadata } = useStaticQuery(graphql`
   {
-    site {
-      siteMetadata {
-        title
-      }
+    wordpressSiteMetadata {
+      name
+      description
     }
   }
   `);
 
   return (
     <>
-      <Header siteTitle={siteMetadata.title} />
+      <Header siteTitle={wordpressSiteMetadata.name} />
       <GridContainer>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
             {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
+            {', '}
+          <a href="https://wordpress.org">WordPress</a>
+            {', and '}
+          <a href="https://foundation.zurb.com/sites.html">Foundation for Sites</a>
         </footer>
       </GridContainer>
     </>
