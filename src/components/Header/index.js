@@ -5,6 +5,7 @@ import { Menu, MenuItem, TitleBar, Breakpoints } from 'react-foundation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './index.scss';
+import logo from '../../images/gatsby-icon.png';
 
 // TODO: drilldown menus
 
@@ -27,7 +28,7 @@ function Navigation({ isOpen, close, siteTitle }) {
             <div className={`off-canvas in-canvas-for-large position-right ${isOpen && 'is-open'}`}>
                 <div class="cell shrink site-title show-for-large">
                     <Link to="/">
-                        <img src="{{ theme.link }}/img/logo.png" alt={siteTitle} />
+                        <img className="logo" src={logo} alt={siteTitle} />
                     </Link>
                 </div>
                 <nav className="cell auto">
