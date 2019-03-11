@@ -31,6 +31,7 @@ function Navigation({ isOpen, close, siteTitle }) {
                 </div>
                 <nav className="cell auto">
                     <Menu isVertical className="large-horizontal">
+                        <MenuItem hideFor={Breakpoints.LARGE}><Link onClick={close} to="/">Home</Link></MenuItem>
                         {allWordpressPage.edges.map(({ node: page }) => (
                             <MenuItem><Link onClick={close} to={page.slug}>{page.title}</Link></MenuItem>
                         ))}
@@ -58,7 +59,7 @@ function Header({ siteTitle }) {
                 <div class="title-bar-right">
                     <button onClick={openMenu}>
                         <span class="text-white title-bar-title text-upper">Menu</span>
-                        <FontAwesomeIcon className="icon" icon="bars" />
+                        <FontAwesomeIcon className="icon text-white" icon="bars" />
                     </button>
                 </div>
             </TitleBar>
